@@ -1,0 +1,1 @@
+# NPMJS-googlenews-rss-scraper
