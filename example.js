@@ -5,7 +5,7 @@ var iGoogleNewsRSSScraper = require('googlenews-rss-scraper');
 
 console.log('Usage example of the googlenews-rss-scraper package.')
 
-iGoogleNewsRSSScraper.getGoogleNewsRSSScraperData( function(data) {
+iGoogleNewsRSSScraper.getGoogleNewsRSSScraperData( { }, function(data) {
         if (!data.error) {
             console.log(JSON.stringify(data, null, 2));      
         }
@@ -13,3 +13,4 @@ iGoogleNewsRSSScraper.getGoogleNewsRSSScraperData( function(data) {
             console.log('Some error occured.');
         }
     });
+    

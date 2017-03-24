@@ -22,16 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// avaible topic types, short code and longname
-// h = headlines
-// n = national
-// w = world
-// e = entertainment
-// b = business
-// s = sports
-// t = sci/tech
-// tc = technology
-
 // parses the data returned from the RSS request
 // returns the data object sent back via the callback
 function parseGoogleNewsRSSData(fileData) {
@@ -192,7 +182,7 @@ function parseGoogleNewsRSSParams(params) {
 function requestGoogleNewsRSS(params, callback) {
     // parse the params
     var returnObject = parseGoogleNewsRSSParams(params);
-    returnObject.data = null;
+    returnObject.newsArray = null;
     // if no error from the parsing object
     if (!returnObject.error) {
         // make a request to the RSS using the URL
@@ -207,7 +197,7 @@ function requestGoogleNewsRSS(params, callback) {
                 if (parsedData.error == false) {
                     returnObject.error = false;      
                     returnObject.errorMessage = null;
-                    returnObject.data = parsedData.data;
+                    returnObject.newsArray = parsedData.data;
                     callback(returnObject);
                 }                    
                 // otherwise parsing failed, indicate such
@@ -231,11 +221,24 @@ function requestGoogleNewsRSS(params, callback) {
     }
 }
 
+// available topic types, short code and longname
+// h = headlines
+// n = national
+// w = world
+// e = entertainment
+// b = business
+// s = sports
+// t = sci/tech
+// tc = technology
+
 // main export function used by the module
 // params = { newsType: 'X', newsTypeTerms: 'Y' }
+// newsType can equal either 'TOPIC' or 'QUERY'
+// newsTypeTerms when 'TOPIC', equals values in above topic types listStyleType
+// newsTypeTerms when 'QUERY', equals a comma-seperated list of serach terms, i.e. 'poker' or 'space,spaceships,stars,astronomy'
 // callback = function(returnObject)
 // specified in detail in readme.md
-export.getGoogleNewsRSSScraperData = function(params, callback) {
+exports.getGoogleNewsRSSScraperData = function(params, callback) {
     requestGoogleNewsRSS(params, callback);
 }
 

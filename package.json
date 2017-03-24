@@ -1,0 +1,32 @@
+{
+  "name": "googlenews-rss-scraper",
+  "version": "1.0.2",
+  "description": "This package scrapes a Google News RSS feed for data, returning news stories based on a specified topic or query.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamMoses-GitHub/NPMJS-googlenews-rss-scraper.git"
+  },
+  "keywords": [
+    "google",
+    "news",
+    "rss",
+    "scraper",
+    "headlines",
+    "alerts",
+    "information"
+  ],
+  "author": "adammoses",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamMoses-GitHub/NPMJS-googlenews-rss-scraper/issues"
+  },
+  "homepage": "https://github.com/AdamMoses-GitHub/NPMJS-googlenews-rss-scraper#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
+  }
+}
